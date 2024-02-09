@@ -5,7 +5,7 @@ export interface ITicket {
   id: string
   name: string
   location: string
-  image: string
+  image: string | undefined
   description: string
   price: Price
   rating: Rating
