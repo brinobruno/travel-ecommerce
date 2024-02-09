@@ -5,8 +5,8 @@ interface IConvertToCurrency {
 }
 
 export function convertToCurrency({
-  locale,
-  currency,
+  locale, // pt-BR
+  currency, // BRL
   amount,
 }: IConvertToCurrency) {
   return new Intl.NumberFormat(locale, {
