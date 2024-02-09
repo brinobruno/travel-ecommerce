@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       backgroundImage: {},
     },
+    colors: {},
+    fontFamily: {},
   },
   plugins: [],
 }
