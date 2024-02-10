@@ -1,7 +1,7 @@
 import { Price } from './price'
 import { Rating } from './rating'
 
-export interface ITicket {
+export type Ticket = {
   id: string
   name: string
   location: string
