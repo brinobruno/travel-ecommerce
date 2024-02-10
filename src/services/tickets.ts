@@ -1,6 +1,6 @@
-import { env } from '../config/env'
-import { ITicket } from '../entities/ticket'
-import { constants } from '../utils/constants'
+import { env } from '@/config/env'
+import { ITicket } from '@/entities/ticket'
+import { constants } from '@/utils/constants'
 
 export async function fetchTickets(): Promise<ITicket[]> {
   try {
