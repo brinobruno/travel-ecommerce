@@ -1,8 +1,8 @@
 import { env } from '@/config/env'
-import { ITicket } from '@/entities/ticket'
+import { Ticket } from '@/entities/ticket'
 import { constants } from '@/utils/constants'
 
-export async function fetchTickets(): Promise<ITicket[]> {
+export async function fetchTickets(): Promise<Ticket[]> {
   try {
     const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/tickets`, {
       method: 'GET',
@@ -25,7 +25,7 @@ export async function fetchTickets(): Promise<ITicket[]> {
   }
 }
 
-export async function fetchTicket(ticketId: string): Promise<ITicket> {
+export async function fetchTicket(ticketId: string): Promise<Ticket> {
   try {
     const response = await fetch(
       `${env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}`,
