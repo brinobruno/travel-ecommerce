@@ -1,7 +1,14 @@
+import { Dashboard } from '@/components/Dashboard'
+import { Header } from '@/components/Header'
+import { SearchBar } from '@/components/SearchBar'
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Header />
+      <SearchBar />
+
+      <Dashboard />
+    </>
   )
 }

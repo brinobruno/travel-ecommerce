@@ -1,11 +1,14 @@
+'use client'
+
 import { ReactNode } from 'react'
 
-import { ButtonStyles } from './styles'
+import { Container } from './styles'
 
 export enum ButtonType {
   primary,
   secondary,
   disabled,
+  outline,
 }
 
 export enum ButtonSize {
@@ -28,9 +31,9 @@ export function Button({ type, size, icon, onClick, children }: ButtonProps) {
   }
 
   return (
-    <ButtonStyles type={type} size={size} onClick={handleOnClick}>
+    <Container type={type} size={size} onClick={handleOnClick}>
       {children}
-      {icon && icon}
-    </ButtonStyles>
+      {icon}
+    </Container>
   )
 }

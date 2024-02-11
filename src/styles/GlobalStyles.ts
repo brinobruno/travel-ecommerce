@@ -123,6 +123,10 @@ const GlobalStyles = styled.createGlobalStyle`
     }
   }
 
+  button {
+    cursor: pointer;
+  }
+
   h1,
   h2,
   h3,
@@ -136,7 +140,47 @@ const GlobalStyles = styled.createGlobalStyle`
   ol,
   li,
   strong {
-    font-family: 'CircularStd', sans-serif;
+    font-family: ${({ theme }) => theme.fontFamily.primary};
+    margin: 0;
+  }
+
+  h1 {
+    font-size: ${({ theme }) => theme.fontSize.header1};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+    line-height: ${({ theme }) => theme.lineHeight.header1};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.header1};
+  }
+
+  h2 {
+    font-size: ${({ theme }) => theme.fontSize.header2};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
+    line-height: ${({ theme }) => theme.lineHeight.header2};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.header2};
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize.header3};
+    font-weight: ${({ theme }) => theme.fontWeight.medium};
+    line-height: ${({ theme }) => theme.lineHeight.header3};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.header3};
+  }
+
+  p,
+  span,
+  strong {
+    font-size: ${({ theme }) => theme.fontSize.paragraph1};
+    font-weight: ${({ theme }) => theme.fontWeight.book};
+    line-height: ${({ theme }) => theme.lineHeight.paragraph1};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.paragraph};
+  }
+
+  a {
+    font-size: ${({ theme }) => theme.fontSize.paragraph1};
+    font-weight: ${({ theme }) => theme.fontWeight.book};
+    line-height: ${({ theme }) => theme.lineHeight.paragraph1};
+    letter-spacing: ${({ theme }) => theme.letterSpacing.paragraph};
+    color: ${({ theme }) => theme.colors.brandBlue};
+    text-decoration: none;
   }
 `
 

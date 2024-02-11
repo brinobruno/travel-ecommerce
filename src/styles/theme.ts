@@ -1,3 +1,5 @@
+'use client'
+
 declare module 'styled-components' {
   export type Theme = typeof theme
   export interface DefaultTheme extends Theme {}
@@ -10,6 +12,10 @@ const theme = {
     brandBlue: '#4070F4',
     brandGreen: '#2BD67B',
     brandBlack: '#0A2156',
+
+    labelPrimary: '#0045F3',
+    labelSecondary: '#3570BF',
+    labelTerciary: '#D9D9D9',
 
     white: '#FFFFFF',
     gray10: '#E7E9ED',
@@ -30,6 +36,11 @@ const theme = {
     support50: '#3C4C70',
   },
 
+  layout: {
+    full: '100%',
+    container: '1320px',
+  },
+
   spacing: {
     xxs: '10px',
     xs: '20px',
@@ -38,6 +49,8 @@ const theme = {
     l: '80px',
     xl: '120px',
     xxl: '200px',
+
+    dashboardGap: '24px',
   },
 
   boxShadow: {
@@ -49,11 +62,43 @@ const theme = {
   },
 
   fontFamily: {
-    circular: 'CircularStd',
+    primary: `'CircularStd', sans-serif`,
   },
 
   fontSize: {
     header1: '40px',
+    header2: '24px',
+    header3: '22px',
+
+    paragraph1: '20px',
+    paragraph2: '16px',
+    paragraph3: '14px',
+    paragraph4: '12px',
+  },
+
+  fontWeight: {
+    bold: '700',
+    medium: '600',
+    book: '500',
+  },
+
+  lineHeight: {
+    header1: '45px',
+    header2: '30px',
+    header3: '28px',
+
+    paragraph1: '26px',
+    paragraph2: '22px',
+    paragraph3: '18px',
+    paragraph4: '16px',
+  },
+
+  letterSpacing: {
+    header1: '-2px',
+    header2: '-1px',
+    header3: '0',
+
+    paragraph: '0',
   },
 }
 

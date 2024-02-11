@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-import StyledComponentsRegistry from '@/styles/lib/styled/registry'
+import GlobalStyles from '@/styles/GlobalStyles'
+import Providers from '@/styles/lib/styled/providers'
 
 export const metadata: Metadata = {
   title: 'Travel e-commerce',
@@ -22,10 +23,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <StyledComponentsRegistry>
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    </StyledComponentsRegistry>
+    <html lang="en">
+      <body>
+        <Providers>
+          <GlobalStyles />
+          {children}
+        </Providers>
+      </body>
+    </html>
   )
 }

@@ -8,7 +8,6 @@ import {
   ThemeProvider,
 } from 'styled-components'
 
-import GlobalStyles from '@/styles/GlobalStyles'
 import theme from '@/styles/theme'
 
 export default function StyledComponentsRegistry({
@@ -20,9 +19,7 @@ export default function StyledComponentsRegistry({
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [styledComponentsStyleSheet, setStyledComponentsStyleSheet] = useState(
-    () => new ServerStyleSheet(),
-  )
+  const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement()
@@ -34,10 +31,7 @@ export default function StyledComponentsRegistry({
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        {children}
-      </ThemeProvider>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </StyleSheetManager>
   )
 }
