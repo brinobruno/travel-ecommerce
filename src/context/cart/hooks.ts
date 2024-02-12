@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
-import { CartContext, CartContextDispatch } from '@/context/cart/context'
-import { CartContextState } from '@/context/cart/types'
+import { CartContext, CartContextDispatch } from './context'
+import { CartContextState } from './types'
 
 export function useCartState(): CartContextState {
   const { state } = useContext(CartContext)

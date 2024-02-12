@@ -1,4 +1,3 @@
-import { env } from '@/config/env'
 import { Ticket } from '@/entities/ticket'
 import { constants } from '@/utils/constants'
 
@@ -9,10 +8,19 @@ const getRequestOptions = {
   },
 }
 
+interface FetchTicketByIdProps {
+  ticketId: string
+}
+
+interface FetchPaginatedTicketsProps {
+  page: number
+  limit: number
+}
+
 export async function fetchTickets(): Promise<Ticket[]> {
   try {
     const response = await fetch(
-      `${env.NEXT_PUBLIC_API_URL}/tickets`,
+      `${process.env.NEXT_PUBLIC_API_URL}/tickets`,
       getRequestOptions,
     )
     if (!response.ok) {
@@ -28,10 +36,12 @@ export async function fetchTickets(): Promise<Ticket[]> {
   }
 }
 
-export async function fetchTicket(ticketId: string): Promise<Ticket> {
+export async function fetchTicket({
+  ticketId,
+}: FetchTicketByIdProps): Promise<Ticket> {
   try {
     const response = await fetch(
-      `${env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}`,
       getRequestOptions,
     )
     if (!response.ok) {
@@ -47,10 +57,13 @@ export async function fetchTicket(ticketId: string): Promise<Ticket> {
   }
 }
 
-export const fetchPaginatedTickets = async (page: number, limit: number) => {
+export const fetchPaginatedTickets = async ({
+  page,
+  limit,
+}: FetchPaginatedTicketsProps): Promise<Ticket[]> => {
   try {
     const response = await fetch(
-      `${env.NEXT_PUBLIC_API_URL}/tickets?page=${page}&limit=${limit}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/tickets?page=${page}&limit=${limit}`,
       getRequestOptions,
     )
 

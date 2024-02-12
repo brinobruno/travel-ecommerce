@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-import { Card, FlexCenter } from '@/styles/shared'
+import { Card, FlexCenter } from '../../styles/shared'
 
 interface ProgressProps {
   percentage: number

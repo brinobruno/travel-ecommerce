@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-import { FlexCenter } from '@/styles/shared'
+import { FlexCenter } from '../../styles/shared'
 
 const Container = styled.header`
   display: flex;

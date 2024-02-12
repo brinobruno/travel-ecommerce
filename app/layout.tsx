@@ -1,7 +1,14 @@
+import { AntdRegistry } from '@ant-design/nextjs-registry'
 import type { Metadata } from 'next'
 
-import GlobalStyles from '@/styles/GlobalStyles'
-import Providers from '@/styles/lib/styled/providers'
+import GlobalStyles from '../src/styles/GlobalStyles'
+import Providers from '../src/styles/lib/styled/providers'
+
+export interface SearchParams {
+  params: {
+    pagination: string
+  }
+}
 
 export const metadata: Metadata = {
   title: 'Travel e-commerce',
@@ -25,10 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
-          <GlobalStyles />
-          {children}
-        </Providers>
+        <AntdRegistry>
+          <Providers>
+            <GlobalStyles />
+            {children}
+          </Providers>
+        </AntdRegistry>
       </body>
     </html>
   )

@@ -4,8 +4,8 @@ import { MessageCircleQuestion, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { CartDrawer } from '@/components/CartDrawer'
-import { convertExchangeRate } from '@/utils/convertExchangeRate'
+import { CartDrawer } from '../CartDrawer'
+import { convertExchangeRate } from '../../utils/convertExchangeRate'
 
 import {
   Container,

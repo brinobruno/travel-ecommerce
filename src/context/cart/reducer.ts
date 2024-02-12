@@ -1,5 +1,5 @@
-import { Action, ActionTypes } from '@/context/cart/types'
-import { Cart } from '@/entities'
+import { Cart } from '../../entities'
+import { Action, ActionTypes } from './types'
 
 export function cartReducer(state: Cart, action: Action): Cart {
   switch (action.type) {

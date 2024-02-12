@@ -1,5 +1,4 @@
-import { fetchCurrencyExchangeRate } from '@/services/currencyExchangeRate'
-
+import { fetchCurrencyExchangeRate } from '../services/currencyExchangeRate'
 import { convertToCurrency } from './convertToCurrency'
 
 export const convertExchangeRate = async () => {
