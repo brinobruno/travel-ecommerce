@@ -9,6 +9,7 @@ import { constants } from '@/utils/constants'
 import getTotalAmountOfTickets from '@/utils/getTotalTickets'
 
 import { SearchParams } from '../../../app/layout'
+import { Loader } from '../Loader'
 import Pagination from '../Pagination'
 
 const TicketsList = ({ params }: SearchParams) => {
@@ -44,17 +45,19 @@ const TicketsList = ({ params }: SearchParams) => {
         <h1>Tickets</h1>
 
         <ul>
-          {loading
-            ? '<p>loading</p>'
-            : paginatedTickets.map((ticket) => (
-                <li key={ticket.id}>
-                  <h3>{ticket.name}</h3>
-                </li>
-              ))}
+          {loading ? (
+            <Loader />
+          ) : (
+            paginatedTickets.map((ticket) => (
+              <li key={ticket.id}>
+                <h3>{ticket.name}</h3>
+              </li>
+            ))
+          )}
         </ul>
 
         {loading ? (
-          '<p>loading</p>'
+          ''
         ) : (
           <Pagination
             pages={Math.ceil(totalTicketsAmount / constants.PER_PAGE)}

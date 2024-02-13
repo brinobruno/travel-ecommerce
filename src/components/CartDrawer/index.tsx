@@ -73,13 +73,11 @@ export function CartDrawer() {
       <button onClick={() => handleAddToCart()}>add item</button>
       <button onClick={() => handleRemoveFromCart('1')}>rm item</button>
 
-      <p>{itemsInCart.length}</p>
-
       <Container onClick={handleContainerClick} isOpen={isCartOpen}>
         <ShoppingCart color={theme.colors.white} fill={theme.colors.white} />
 
         <CartAmount>
-          <span>0 </span>
+          <span>{itemsInCart.length}</span>
         </CartAmount>
 
         <div
