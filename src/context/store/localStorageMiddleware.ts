@@ -1,9 +1,9 @@
 import { Middleware } from 'redux'
 
+import { constants } from '@/utils/constants'
+
 import { CartState } from '../cart/reducer'
 import { ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART } from '../cart/types'
-
-const LOCAL_STORAGE_KEY = 'cart'
 
 const localStorageMiddleware: Middleware =
   (storeAPI) => (next) => (action: unknown) => {
@@ -16,7 +16,7 @@ const localStorageMiddleware: Middleware =
       const cartState: CartState = state.cart
 
       const serializedState = JSON.stringify(cartState)
-      localStorage.setItem(LOCAL_STORAGE_KEY, serializedState)
+      localStorage.setItem(constants.LOCAL_STORAGE_KEY, serializedState)
     }
 
     return result
