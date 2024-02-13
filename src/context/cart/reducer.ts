@@ -5,7 +5,7 @@ import { CartItem } from '@/entities'
 import { CartAction } from './actions'
 import * as actionTypes from './types'
 
-interface CartState {
+export interface CartState {
   itemsInCart: CartItem[]
 }
 
