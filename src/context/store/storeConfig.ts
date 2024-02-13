@@ -1,6 +1,8 @@
+'use client'
+
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import { cartReducer } from '../cart/reducer'
+import cartReducer from '../cart/reducer'
 
 const rootReducer = combineReducers({
   cart: cartReducer,

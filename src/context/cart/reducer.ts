@@ -1,16 +1,35 @@
-import { Cart } from '../../entities'
-import { Action, ActionTypes } from './types'
+'use client'
 
-export function cartReducer(state: Cart, action: Action): Cart {
+import { CartItem } from '@/entities'
+
+import { CartAction } from './actions'
+import * as actionTypes from './types'
+
+interface CartState {
+  itemsInCart: CartItem[]
+}
+
+const initialState: CartState = {
+  itemsInCart: [],
+}
+
+const reducer = (state = initialState, action: CartAction) => {
   switch (action.type) {
-    case ActionTypes.ADD_TO_CART:
-      return { ...state, cartItems: [...state.cartItems, action.payload] }
-    case ActionTypes.REMOVE_FROM_CART:
+    case actionTypes.ADD_ITEM_TO_CART:
       return {
         ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+        itemsInCart: [...state.itemsInCart, action.payload],
+      }
+    case actionTypes.REMOVE_ITEM_FROM_CART:
+      return {
+        ...state,
+        itemsInCart: state.itemsInCart.filter(
+          (item) => item.ticket.id !== action.payload,
+        ),
       }
     default:
       return state
   }
 }
+
+export default reducer

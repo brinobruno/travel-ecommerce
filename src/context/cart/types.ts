@@ -1,14 +1,4 @@
-import { Cart, CartItem } from '../../entities'
+const ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART'
+const REMOVE_ITEM_FROM_CART = 'REMOVE_ITEM_FROM_CART'
 
-export enum ActionTypes {
-  ADD_TO_CART = 'ADD_TO_CART',
-  REMOVE_FROM_CART = 'REMOVE_FROM_CART',
-}
-
-export type Action =
-  | { type: ActionTypes.ADD_TO_CART; payload: CartItem }
-  | { type: ActionTypes.REMOVE_FROM_CART; payload: string }
-
-export interface CartContextState {
-  cart: Cart
-}
+export { ADD_ITEM_TO_CART, REMOVE_ITEM_FROM_CART }
