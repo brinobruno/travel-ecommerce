@@ -1,10 +1,9 @@
 import { createContext, Dispatch, ReactNode, useReducer } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 
-import { Action, CartContextState } from './types'
 import { Cart } from '../../entities'
-
 import { cartReducer } from './reducer'
+import { Action, CartContextState } from './types'
 
 export type CartContextDispatch = Dispatch<Action>
 

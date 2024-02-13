@@ -1,3 +1,5 @@
+'use client'
+
 import { fetchCurrencyExchangeRate } from '../services/currencyExchangeRate'
 import { convertToCurrency } from './convertToCurrency'
 

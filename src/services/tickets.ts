@@ -15,6 +15,7 @@ interface FetchTicketByIdProps {
 interface FetchPaginatedTicketsProps {
   page: number
   limit: number
+  search?: string
 }
 
 export async function fetchTickets(): Promise<Ticket[]> {
@@ -58,12 +59,13 @@ export async function fetchTicket({
 }
 
 export const fetchPaginatedTickets = async ({
-  page,
-  limit,
+  page = 1,
+  limit = constants.PER_PAGE,
+  search = '',
 }: FetchPaginatedTicketsProps): Promise<Ticket[]> => {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/tickets?page=${page}&limit=${limit}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/tickets?page=${page}&limit=${limit}&search=${search}`,
       getRequestOptions,
     )
 

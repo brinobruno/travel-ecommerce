@@ -1,4 +1,4 @@
-import { AntdRegistry } from '@ant-design/nextjs-registry'
+// import { AntdRegistry } from '@ant-design/nextjs-registry'
 import type { Metadata } from 'next'
 
 import GlobalStyles from '../src/styles/GlobalStyles'
@@ -32,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AntdRegistry>
-          <Providers>
-            <GlobalStyles />
-            {children}
-          </Providers>
-        </AntdRegistry>
+        {/* <AntdRegistry> */}
+        <Providers>
+          <GlobalStyles />
+          {children}
+        </Providers>
+        {/* </AntdRegistry> */}
       </body>
     </html>
   )

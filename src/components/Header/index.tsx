@@ -3,10 +3,10 @@
 import { MessageCircleQuestion, User } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-import { CartDrawer } from '../CartDrawer'
 import { convertExchangeRate } from '../../utils/convertExchangeRate'
-
+import { CartDrawer } from '../CartDrawer'
 import {
   Container,
   Control,
@@ -18,6 +18,16 @@ import {
 } from './styles'
 
 export function Header() {
+  const [data, setData] = useState<string[]>([''])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    convertExchangeRate().then((data) => {
+      setData(data)
+      setLoading(false)
+    })
+  }, [])
+
   return (
     <Container>
       <Nav>
@@ -25,7 +35,7 @@ export function Header() {
 
         <Control>
           <ExchangeRate>
-            <span>Cotação do dólar hoje: {convertExchangeRate()}</span>
+            <span>Cotação do dólar hoje: {loading ? '...' : data}</span>
 
             <Image
               src="/assets/flag-br.svg"
@@ -34,7 +44,7 @@ export function Header() {
               height={21}
             />
 
-            <Link href={'#'}>
+            <Link href="/">
               <MessageCircleQuestion />
             </Link>
           </ExchangeRate>

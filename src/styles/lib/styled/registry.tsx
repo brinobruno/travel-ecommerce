@@ -1,5 +1,6 @@
 'use client'
 
+import isPropValid from '@emotion/is-prop-valid'
 import { useServerInsertedHTML } from 'next/navigation'
 import React, { useState } from 'react'
 import {
@@ -9,6 +10,15 @@ import {
 } from 'styled-components'
 
 import theme from '../../theme'
+
+function shouldForwardProp(propName: string, target: unknown) {
+  if (typeof target === 'string') {
+    // For HTML elements, forward the prop if it is a valid HTML attribute
+    return isPropValid(propName)
+  }
+  // For other elements, forward all props
+  return true
+}
 
 export default function StyledComponentsRegistry({
   children,
@@ -30,7 +40,10 @@ export default function StyledComponentsRegistry({
   if (typeof window !== 'undefined') return <>{children}</>
 
   return (
-    <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+    <StyleSheetManager
+      sheet={styledComponentsStyleSheet.instance}
+      shouldForwardProp={shouldForwardProp}
+    >
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </StyleSheetManager>
   )

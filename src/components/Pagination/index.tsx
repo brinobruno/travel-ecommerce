@@ -1,8 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 
 interface PaginationProps {
   pages: number
-  active?: number // Make active prop optional
+  active?: number
 }
 
 export default function Pagination({ pages, active }: PaginationProps) {

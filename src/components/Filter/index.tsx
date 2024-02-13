@@ -2,7 +2,6 @@
 
 import { Building, Home, Hotel, Star } from 'lucide-react'
 import { useTheme } from 'styled-components'
-import { v4 } from 'uuid'
 
 import { Button, ButtonSize, ButtonType } from '../Button'
 import {
@@ -62,7 +61,6 @@ export function Filter() {
           <button type="button">
             {Array(5).fill(
               <Star
-                key={v4()}
                 fill={theme.colors.support30}
                 color={theme.colors.support30}
               />,
@@ -72,7 +70,6 @@ export function Filter() {
           <button type="button">
             {Array(4).fill(
               <Star
-                key={v4()}
                 fill={theme.colors.support30}
                 color={theme.colors.support30}
               />,
@@ -82,7 +79,6 @@ export function Filter() {
           <button type="button">
             {Array(3).fill(
               <Star
-                key={v4()}
                 fill={theme.colors.support30}
                 color={theme.colors.support30}
               />,
@@ -92,7 +88,6 @@ export function Filter() {
           <button type="button">
             {Array(2).fill(
               <Star
-                key={v4()}
                 fill={theme.colors.support30}
                 color={theme.colors.support30}
               />,
@@ -102,7 +97,6 @@ export function Filter() {
           <button type="button">
             {Array(1).fill(
               <Star
-                key={v4()}
                 fill={theme.colors.support30}
                 color={theme.colors.support30}
               />,
