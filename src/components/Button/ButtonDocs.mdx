@@ -1,0 +1,36 @@
+import { Canvas, Meta, Title, Description } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+<Title of={ButtonStories} />
+<Description of={ButtonStories} />
+
+### Primary Button
+The primary button stands out with its bold appearance and larger size, making it
+ideal for emphasizing key actions or primary functionalities within the user interface.
+<Canvas of={ButtonStories.Primary} />
+
+### Secondary Button
+Contrasting the primary button, the secondary button offers a subtler design
+with a medium size, suitable for secondary actions or complementary functions
+that don't require immediate attention but are still important.
+<Canvas of={ButtonStories.Secondary} />
+
+### Disabled Button
+Displayed in a smaller size and grayed out, the disabled button indicates actions
+that are temporarily unavailable or inaccessible, providing clarity to users
+about the current state of functionality.
+<Canvas of={ButtonStories.Disabled} />
+
+### Outline Button
+The outline button features a distinctive border, maintaining simplicity while
+adding a subtle visual appeal. It's well-suited for actions that require less
+prominence within the interface.
+<Canvas of={ButtonStories.Outline} />
+
+### Button with Icon
+Combining functionality with visual representation, the button with an icon
+integrates familiar symbols like a home icon seamlessly into the button's design,
+enhancing user experience and aiding in quicker action recognition.
+<Canvas of={ButtonStories.WithIcon} />

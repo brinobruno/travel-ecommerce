@@ -23,6 +23,9 @@ dependencies:
   '@storybook/addon-onboarding':
     specifier: ^1.0.11
     version: 1.0.11(react-dom@18.2.0)(react@18.2.0)
+  '@storybook/addon-themes':
+    specifier: ^7.6.15
+    version: 7.6.15
   '@storybook/addons':
     specifier: ^7.6.13
     version: 7.6.15(react-dom@18.2.0)(react@18.2.0)
@@ -3141,6 +3144,12 @@ packages:
     resolution: {integrity: sha512-5zYDWO0OIlFchYqSjRDmQv2mPMwAwIDTocc00FMiQAaNqPZ+3ZP9L6kOng8YgwYWpPBecoHdLvSW6rTmcufHtw==}
     dependencies:
       '@storybook/global': 5.0.0
+      ts-dedent: 2.2.0
+    dev: false
+
+  /@storybook/addon-themes@7.6.15:
+    resolution: {integrity: sha512-wslDMMCRuIxTKkws0tux+8rs329HhQjlra1eCGQjNveYjhW7RHVxRKKnwV1KBAmnQN6R5Lxx3RRlGOB/Q94Uqg==}
+    dependencies:
       ts-dedent: 2.2.0
     dev: false
 
