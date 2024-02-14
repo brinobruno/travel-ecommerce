@@ -68,6 +68,7 @@ const TicketsList = ({ params }: SearchParams) => {
           <Pagination
             pages={Math.ceil(totalTicketsAmount / constants.PER_PAGE)}
             active={Number(currentPage || '1')}
+            totalItems={totalTicketsAmount}
           />
         )}
       </Container>
