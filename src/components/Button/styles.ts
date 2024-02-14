@@ -35,7 +35,7 @@ export const Container = styled.button<ButtonStyleProps>`
     props.type === ButtonType.secondary &&
     css`
       background: ${({ theme }) => theme.colors.white};
-      border: 1px solid ${({ theme }) => theme.colors.support10};
+      border: 1px solid ${({ theme }) => theme.colors.white};
       color: ${({ theme }) => theme.colors.support10};
     `}
 

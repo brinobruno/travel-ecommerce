@@ -31,7 +31,14 @@ export function Header() {
   return (
     <Container>
       <Nav>
-        <Image src="/assets/logo.svg" alt="logoipsum" width={136} height={30} />
+        <Link href="/">
+          <Image
+            src="/assets/logo.svg"
+            alt="logoipsum"
+            width={136}
+            height={30}
+          />
+        </Link>
 
         <Control>
           <ExchangeRate>

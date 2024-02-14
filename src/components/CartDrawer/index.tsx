@@ -4,9 +4,8 @@ import { ShoppingCart } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'styled-components'
 
-import { addItemToCart, removeItemFromCart } from '@/context/cart/actions'
+import { removeItemFromCart } from '@/context/cart/actions'
 import { useAppDispatch, useAppSelector } from '@/context/store/storeHooks'
-import { CartItem } from '@/entities'
 
 import { CartAmount, Container } from './styles'
 
@@ -38,39 +37,12 @@ export function CartDrawer() {
     setIsCartOpen(!isCartOpen)
   }
 
-  const ticketToAdd: CartItem = {
-    ticket: {
-      id: '1',
-      name: 'Test',
-      description: 'a',
-      image: '',
-      rating: {
-        value: 5,
-        reviewsCount: 10,
-      },
-      location: '',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-      price: {
-        full: 2000,
-        discount: 1900,
-      },
-    },
-    quantity: 2,
-    subTotal: 2000,
-  }
-
-  const handleAddToCart = () => {
-    dispatch(addItemToCart(ticketToAdd))
-  }
-
   const handleRemoveFromCart = (itemId: string) => {
     dispatch(removeItemFromCart(itemId))
   }
 
   return (
     <>
-      <button onClick={() => handleAddToCart()}>add item</button>
       <button onClick={() => handleRemoveFromCart('1')}>rm item</button>
 
       <Container onClick={handleContainerClick} isOpen={isCartOpen}>

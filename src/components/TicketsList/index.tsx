@@ -51,6 +51,7 @@ const TicketsList = ({ params }: SearchParams) => {
             {paginatedTickets.map((ticket) => (
               <TicketListItem
                 key={ticket.id}
+                id={ticket.id}
                 image={ticket.image}
                 name={ticket.name}
                 location={ticket.location}

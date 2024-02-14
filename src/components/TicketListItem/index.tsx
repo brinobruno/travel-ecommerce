@@ -4,19 +4,21 @@ import Link from 'next/link'
 import { useTheme } from 'styled-components'
 
 import { Price, Rating } from '@/entities'
+import { isValidUrl } from '@/utils/checkValidUrl'
 import { convertToCurrency } from '@/utils/convertToCurrency'
 
+import { RatingDisplay } from '../RatingDisplay'
+import fallbackImage from './../../../public/assets/fallback-alt.svg'
 import {
   Container,
   Content,
   ImageContainer,
   LocationWrapper,
   PriceWrapper,
-  ReviewWrapper,
-  // Separator,
 } from './styles'
 
 interface TicketListItemProps {
+  id: string
   name: string
   image?: string
   location: string
@@ -25,6 +27,7 @@ interface TicketListItemProps {
 }
 
 export function TicketListItem({
+  id,
   name,
   image,
   location,
@@ -33,11 +36,13 @@ export function TicketListItem({
 }: TicketListItemProps) {
   const theme = useTheme()
 
+  const hasImage = isValidUrl(image as string)
+
   return (
     <Container>
       <ImageContainer>
         <Image
-          src={image ?? '/fallback.svg'}
+          src={hasImage ? image : fallbackImage}
           alt={name}
           width={213}
           height={232}
@@ -53,16 +58,11 @@ export function TicketListItem({
             <p>{location}</p>
           </LocationWrapper>
 
-          <ReviewWrapper>
-            <div>
-              <span>{rating.value}</span>
-            </div>
-            <strong>Excellent</strong>
-            <span>({rating.reviewsCount} Reviews)</span>
-          </ReviewWrapper>
+          <RatingDisplay
+            value={rating.value}
+            reviewsCount={rating.reviewsCount}
+          />
         </div>
-
-        {/* <Separator /> */}
 
         <PriceWrapper>
           <p>
@@ -84,7 +84,7 @@ export function TicketListItem({
             </h2>
           </span>
 
-          <Link href="/">
+          <Link href={`/ticket/${id}`}>
             Saber mais <ArrowRight size={10} color={theme.colors.white} />
           </Link>
         </PriceWrapper>
