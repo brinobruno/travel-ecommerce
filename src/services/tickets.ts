@@ -51,6 +51,10 @@ export async function fetchTicket({
       )
     }
 
+    if (response.status === 404) {
+      throw new Error(`Not found: ${response.status} ${response.statusText}`)
+    }
+
     return await response.json()
   } catch (error) {
     console.error('Error fetching the ticket:', error)
