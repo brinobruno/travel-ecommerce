@@ -14,8 +14,10 @@ interface DotProps {
 export const DotWrapper = styled.div`
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+
+  padding-top: 100px;
 `
 export const Dot = styled.div<DotProps>`
   background-color: black;

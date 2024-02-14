@@ -1,6 +1,6 @@
 interface IConvertToCurrency {
   locale: string
-  currency: string
+  currency?: string
   amount: number
 }
 
@@ -10,7 +10,7 @@ export function convertToCurrency({
   amount,
 }: IConvertToCurrency) {
   return new Intl.NumberFormat(locale, {
-    style: 'currency',
+    style: currency ? 'currency' : 'decimal',
     currencyDisplay: 'narrowSymbol',
     currency,
     minimumFractionDigits: 2,

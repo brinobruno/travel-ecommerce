@@ -11,6 +11,8 @@ import getTotalAmountOfTickets from '@/utils/getTotalTickets'
 import { SearchParams } from '../../../app/layout'
 import { Loader } from '../Loader'
 import Pagination from '../Pagination'
+import { TicketListItem } from '../TicketListItem'
+import { Container } from './styles'
 
 const TicketsList = ({ params }: SearchParams) => {
   const [totalTicketsAmount, setTotalTicketsAmount] = useState(0)
@@ -41,20 +43,23 @@ const TicketsList = ({ params }: SearchParams) => {
     }, [])
 
     return (
-      <section>
-        <h1>Tickets</h1>
-
-        <ul>
-          {loading ? (
-            <Loader />
-          ) : (
-            paginatedTickets.map((ticket) => (
-              <li key={ticket.id}>
-                <h3>{ticket.name}</h3>
-              </li>
-            ))
-          )}
-        </ul>
+      <Container>
+        {loading ? (
+          <Loader />
+        ) : (
+          <ul>
+            {paginatedTickets.map((ticket) => (
+              <TicketListItem
+                key={ticket.id}
+                image={ticket.image}
+                name={ticket.name}
+                location={ticket.location}
+                price={ticket.price}
+                rating={ticket.rating}
+              />
+            ))}
+          </ul>
+        )}
 
         {loading ? (
           ''
@@ -64,7 +69,7 @@ const TicketsList = ({ params }: SearchParams) => {
             active={Number(currentPage || '1')}
           />
         )}
-      </section>
+      </Container>
     )
   } catch (error) {
     console.error('Error fetching or rendering tickets:', error)

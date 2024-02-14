@@ -74,6 +74,10 @@ const GlobalStyles = styled.createGlobalStyle`
     display: list-item;
   }
 
+  ul {
+    list-style-type: none;
+  }
+
   // Global CSS
   @font-face {
     font-family: 'CircularStd';
