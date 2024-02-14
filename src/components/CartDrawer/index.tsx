@@ -4,14 +4,14 @@ import { ShoppingCart } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { useTheme } from 'styled-components'
 
+import { CartItem } from '@/components/CartItem'
+import { Separator } from '@/components/TicketDetails/styles'
 import { useAppSelector } from '@/context/store/storeHooks'
 import { calculateDiscountedValue } from '@/utils/calculateDiscount'
 import { constants } from '@/utils/constants'
 import { convertToCurrency } from '@/utils/convertToCurrency'
 
 import { Button, ButtonSize, ButtonType } from '../Button'
-import { CartItem } from '../CartItem'
-import { Separator } from '../TicketDetails/styles'
 import { CartAmount, CartWrapper, Container, Summary, Values } from './styles'
 
 export function CartDrawer() {

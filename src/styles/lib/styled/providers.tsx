@@ -3,8 +3,8 @@
 import { PropsWithChildren } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import theme from '../../theme'
-import StyledComponentsRegistry from './registry'
+import StyledComponentsRegistry from '@/styles/lib/styled/registry'
+import theme from '@/styles/theme'
 
 const Providers = (props: PropsWithChildren) => {
   return (

@@ -13,14 +13,14 @@ import Link from 'next/link'
 import { toast, Toaster } from 'sonner'
 import { useTheme } from 'styled-components'
 
+import { Button, ButtonSize, ButtonType } from '@/components/Button'
+import { RatingDisplay } from '@/components/RatingDisplay'
 import { addItemToCart } from '@/context/cart/actions'
 import { useAppDispatch } from '@/context/store/storeHooks'
 import { Ticket } from '@/entities'
 import { isValidUrl } from '@/utils/checkValidUrl'
 import { convertToCurrency } from '@/utils/convertToCurrency'
 
-import { Button, ButtonSize, ButtonType } from '../Button'
-import { RatingDisplay } from '../RatingDisplay'
 import fallbackImage from './../../../public/assets/fallback-alt.svg'
 import {
   Amenities,

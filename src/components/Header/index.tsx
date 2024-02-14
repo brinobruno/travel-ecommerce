@@ -5,8 +5,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import { CartDrawer } from '@/components/CartDrawer'
+
 import { convertExchangeRate } from '../../utils/convertExchangeRate'
-import { CartDrawer } from '../CartDrawer'
 import {
   Container,
   Control,
@@ -18,7 +19,7 @@ import {
 } from './styles'
 
 export function Header() {
-  const [data, setData] = useState<string[]>([''])
+  const [data, setData] = useState('')
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {

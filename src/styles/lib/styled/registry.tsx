@@ -9,7 +9,7 @@ import {
   ThemeProvider,
 } from 'styled-components'
 
-import theme from '../../theme'
+import theme from '@/styles/theme'
 
 function shouldForwardProp(propName: string, target: unknown) {
   if (typeof target === 'string') {

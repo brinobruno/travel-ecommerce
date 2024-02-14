@@ -3,15 +3,15 @@
 import { useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
+import { Loader } from '@/components/Loader'
+import Pagination from '@/components/Pagination'
+import { TicketListItem } from '@/components/TicketListItem'
 import { Ticket } from '@/entities'
 import { fetchPaginatedTickets } from '@/services/tickets'
 import { constants } from '@/utils/constants'
 import getTotalAmountOfTickets from '@/utils/getTotalTickets'
 
 import { SearchParams } from '../../../app/layout'
-import { Loader } from '../Loader'
-import Pagination from '../Pagination'
-import { TicketListItem } from '../TicketListItem'
 import { Container } from './styles'
 
 const TicketsList = ({ params }: SearchParams) => {

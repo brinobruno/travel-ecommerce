@@ -3,11 +3,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTheme } from 'styled-components'
 
+import { RatingDisplay } from '@/components/RatingDisplay'
 import { Price, Rating } from '@/entities'
 import { isValidUrl } from '@/utils/checkValidUrl'
 import { convertToCurrency } from '@/utils/convertToCurrency'
 
-import { RatingDisplay } from '../RatingDisplay'
 import fallbackImage from './../../../public/assets/fallback-alt.svg'
 import {
   Container,

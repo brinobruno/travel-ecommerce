@@ -1,7 +1,7 @@
 'use client'
 
-import { fetchCurrencyExchangeRate } from '../services/currencyExchangeRate'
-import { convertToCurrency } from './convertToCurrency'
+import { fetchCurrencyExchangeRate } from '@/services/currencyExchangeRate'
+import { convertToCurrency } from '@/utils/convertToCurrency'
 
 export const convertExchangeRate = async () => {
   const rate = await fetchCurrencyExchangeRate({ currency: 'BRL' })
