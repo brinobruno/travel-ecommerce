@@ -16,6 +16,11 @@ export const ImageContainer = styled.div`
   img {
     height: 232px;
     width: 214px;
+
+    @media (max-width: 1100px) {
+      height: 232px;
+      width: 160px;
+    }
   }
 
   img {
@@ -29,6 +34,10 @@ export const Content = styled.div`
   align-items: flex-start;
   padding: 32px 24px;
   width: 100%;
+
+  @media (max-width: 1000px) {
+    padding: 18px;
+  }
 
   h3 {
     padding-bottom: 8px;
@@ -72,6 +81,7 @@ export const ReviewWrapper = styled.div`
 
   strong {
     color: ${({ theme }) => theme.colors.brandBlack};
+    padding-right: 4px;
   }
 
   span,
@@ -86,12 +96,18 @@ export const PriceWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: fit-content;
+
+  max-width: 154px;
+  width: 100%;
 
   border-left: 1px solid ${({ theme }) => theme.colors.gray10};
   height: 100%;
   padding-left: 24px;
   margin-left: 12px;
+
+  @media (max-width: 1200px) {
+    width: fit-content;
+  }
 
   p {
     color: ${({ theme }) => theme.colors.gray40};
@@ -125,6 +141,10 @@ export const PriceWrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 18px;
+
+    @media (max-width: 1200px) {
+      gap: 2px;
+    }
   }
 `
 
