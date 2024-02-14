@@ -12,6 +12,7 @@ const theme = {
     brandBlue: '#4070F4',
     brandGreen: '#2BD67B',
     brandBlack: '#0A2156',
+    brandSecondary: '#646981',
 
     labelPrimary: '#0045F3',
     labelSecondary: '#3570BF',

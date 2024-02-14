@@ -8,6 +8,7 @@ interface CartDrawerProps {
 
 const Container = styled.div<CartDrawerProps>`
   background: ${({ theme }) => theme.colors.labelPrimary};
+  cursor: pointer;
 
   height: 50px;
   min-width: 98px;
@@ -22,18 +23,13 @@ const Container = styled.div<CartDrawerProps>`
   position: relative;
 
   .cart-modal {
+    cursor: auto;
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 
-    color: ${({ theme }) => theme.colors.gray100};
-    background: ${({ theme }) => theme.colors.white};
-    box-shadow: ${({ theme }) => theme.boxShadow.m};
-
-    padding: 24px;
-
     position: absolute;
-    bottom: -48px;
+    top: 82px;
     right: 0;
 
     z-index: 100;
@@ -62,4 +58,28 @@ const CartAmount = styled(FlexCenter)`
   }
 `
 
-export { Container, CartAmount }
+const CartWrapper = styled.div`
+  color: ${({ theme }) => theme.colors.gray100};
+  background: ${({ theme }) => theme.colors.white};
+  box-shadow: ${({ theme }) => theme.boxShadow.m};
+
+  width: 494px;
+  padding: 24px;
+
+  > strong {
+    font-size: ${({ theme }) => theme.fontSize.paragraph2};
+    line-height: ${({ theme }) => theme.lineHeight.paragraph2};
+    font-weight: ${({ theme }) => theme.fontWeight.medium};
+    display: inline-block;
+    margin-bottom: 12px;
+  }
+`
+
+const Summary = styled.div`
+  button {
+    width: 100%;
+    background: ${({ theme }) => theme.colors.labelPrimary};
+  }
+`
+
+export { Container, CartAmount, CartWrapper, Summary }

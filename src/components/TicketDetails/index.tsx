@@ -10,6 +10,7 @@ import {
   Wifi,
 } from 'lucide-react'
 import Link from 'next/link'
+import { toast, Toaster } from 'sonner'
 import { useTheme } from 'styled-components'
 
 import { addItemToCart } from '@/context/cart/actions'
@@ -70,6 +71,8 @@ export function TicketDetails({
         subTotal: price.full,
       }),
     )
+
+    toast.success('O ingresso foi adicionado ao carrinho')
   }
 
   const hasImage = isValidUrl(image ?? '')
@@ -211,6 +214,8 @@ export function TicketDetails({
           </Total>
         </Pricing>
       </Content>
+
+      <Toaster richColors />
     </Container>
   )
 }
