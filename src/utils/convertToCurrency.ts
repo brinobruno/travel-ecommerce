@@ -15,7 +15,5 @@ export function convertToCurrency({
     currency,
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
-  })
-    .format(amount)
-    .split('\u00A0') // Remove space between currency sign and amount
+  }).format(amount)
 }

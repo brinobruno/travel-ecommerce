@@ -68,7 +68,7 @@ export function TicketDetails({
           updatedAt,
         },
         quantity: 1,
-        subTotal: price.full,
+        subTotal: price.discount,
       }),
     )
 

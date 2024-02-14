@@ -78,8 +78,53 @@ const CartWrapper = styled.div`
 const Summary = styled.div`
   button {
     width: 100%;
+    margin-top: 24px;
     background: ${({ theme }) => theme.colors.labelPrimary};
+    font-weight: ${({ theme }) => theme.fontWeight.medium};
   }
 `
 
-export { Container, CartAmount, CartWrapper, Summary }
+const Values = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+
+    p,
+    span,
+    strong {
+      font-size: ${({ theme }) => theme.fontSize.paragraph2};
+      line-height: ${({ theme }) => theme.lineHeight.paragraph2};
+
+      &.discount {
+        color: ${({ theme }) => theme.colors.brandLabelPrimary};
+      }
+
+      &.highlight {
+        color: ${({ theme }) => theme.colors.labelPrimary};
+        font-size: ${({ theme }) => theme.fontSize.header2};
+        line-height: ${({ theme }) => theme.lineHeight.header2};
+      }
+    }
+
+    p,
+    span {
+      color: ${({ theme }) => theme.colors.brandSecondary};
+    }
+
+    strong {
+      color: ${({ theme }) => theme.colors.gray100};
+      font-weight: ${({ theme }) => theme.fontWeight.bold};
+    }
+  }
+`
+
+export { Container, CartAmount, CartWrapper, Summary, Values }
