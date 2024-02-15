@@ -1,10 +1,9 @@
 'use client'
 
-import { Provider } from 'react-redux'
+import dynamic from 'next/dynamic'
 
 import { Header } from '@/components/Header'
 import { SearchBar } from '@/components/SearchBar'
-import store from '@/context/store/storeConfig'
 
 import GlobalStyles from '../src/styles/GlobalStyles'
 import Providers from '../src/styles/lib/styled/providers'
@@ -15,6 +14,13 @@ export interface SearchParams {
   }
 }
 
+const DynamicContextProvider = dynamic(
+  () => import('./../src/context/store/provider'),
+  {
+    ssr: false,
+  },
+)
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,15 +28,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <Providers>
           <GlobalStyles />
-          <Provider store={store}>
+          <DynamicContextProvider>
             <Header />
             <SearchBar />
 
             {children}
-          </Provider>
+          </DynamicContextProvider>
         </Providers>
       </body>
     </html>

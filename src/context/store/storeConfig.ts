@@ -8,15 +8,17 @@ import cartReducer from '../cart/reducer'
 import localStorageMiddleware from './localStorageMiddleware'
 
 const loadInitialState = () => {
-  const storedState = localStorage.getItem(constants.LOCAL_STORAGE_KEY)
-  if (storedState) {
-    try {
-      return { cart: JSON.parse(storedState) }
-    } catch (error) {
-      console.error('Failed to parse stored state:', error)
+  if (typeof window !== 'undefined') {
+    const storedState = localStorage.getItem(constants.LOCAL_STORAGE_KEY)
+    if (storedState) {
+      try {
+        return { cart: JSON.parse(storedState) }
+      } catch (error) {
+        console.error('Failed to parse stored state:', error)
+      }
     }
+    return undefined // Return undefined if no state is found or parsing fails
   }
-  return undefined // Return undefined if no state is found or parsing fails
 }
 
 const preloadedState = loadInitialState()
